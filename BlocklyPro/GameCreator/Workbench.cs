@@ -598,7 +598,7 @@ namespace BlocklyPro.GameCreator
 
         #region private
 
-        private async Task LoadGames()
+        public async Task LoadGames()
         {
             _xhrRequester = new HttpRequester("game/get");
             var result = await _xhrRequester.Get<List<KeyValuePair<int, string>>>("", "get");

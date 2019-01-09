@@ -58,6 +58,7 @@
             this.Controls.Add(this.btnAddGame);
             this.Controls.Add(this.txtName);
             this.Name = "FrmNewGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NEW GAME";
             this.ResumeLayout(false);
             this.PerformLayout();

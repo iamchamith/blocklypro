@@ -32,6 +32,8 @@ namespace BlocklyPro.GameCreator
                     Name = txtName.Text
                 };
                 var result = await _xhr.Request<Game, Game>(request);
+                await _parentWorkbench.LoadGames();
+                this.Close();
             }
         }
     }

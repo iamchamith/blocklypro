@@ -208,7 +208,7 @@ namespace BlocklyPro.GameRunner
                     var itemX = line as UcMoveForward;
                     itemX.HighlightsFontColor();
                     timer1.Start();
-                    movePx = 0;
+                    movePx = itemX.GetStepCount();
                 }else if (line is UcFunction || line is UcLoop)
                 {
                     Run();
@@ -222,7 +222,7 @@ namespace BlocklyPro.GameRunner
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (movePx >= 50)
+            if (movePx <= 0)
             {
                 timer1.Stop();
                 Run();
@@ -248,7 +248,7 @@ namespace BlocklyPro.GameRunner
             X = point.X;
             Y = point.Y;
             _charactor.Location = point;
-            movePx++;
+            movePx--;
             //Console.Beep();
         }
  
